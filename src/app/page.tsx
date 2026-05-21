@@ -132,16 +132,16 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-gray-600 text-base leading-relaxed">
                 <p>
-                  I spent 25 years serving the DC metro area in law enforcement. In that time, I sat across from families in their most vulnerable moments — and I saw firsthand how financial unpreparedness turns hardship into crisis.
+                  I spent 28 years serving the DC metro area in law enforcement. During that time, I sat across from families in their most vulnerable moments and saw firsthand how financial unpreparedness turns hardship into crisis. Whether it is a family home lost to unpaid property taxes or inheritance stalled in probate court, I have seen how quickly a lack of planning can impact a family’s future. It is a common misconception in our communities that a power of attorney alone is enough to protect your assets.
                 </p>
                 <p>
-                  When I retired, I asked myself: <span className="text-[#0a1628] font-semibold italic">"Who is actually sitting down with working families in the DMV and explaining this stuff plainly?"</span> The answer, too often, was nobody.
+                  When I retired in 2020, I realized there were few resources available to provide working families in the DMV with plain, trustworthy guidance on these issues. I created LegacyShield Pro to fill that gap.
                 </p>
                 <p>
-                  LegacyShield Pro is my answer to that. As a Mason, a father, a neighbor, and a 25-year public servant — I built this for the families I know and love in this community. Not Wall Street. Not generic advice. Real knowledge, from someone who has walked these streets.
+                  As a Master Mason, a father, and a long-time public servant, I built this for our community. LegacyShield Pro offers real knowledge and practical solutions from someone who understands the challenges our neighbors face.
                 </p>
                 <p className="text-[#0a1628] font-semibold">
-                  Your family deserves a legacy. Let's build it together.
+                  Your family deserves a lasting legacy. I invite you to take the first step toward building a protected future with LegacyShield Pro.
                 </p>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
