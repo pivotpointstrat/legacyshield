@@ -5,37 +5,37 @@ const courses = [
     id: 1, icon: '🛡️', title: 'Life Insurance 101', lessons: 6,
     description: 'Learn the difference between term and whole life, how much coverage you actually need, and how to stop overpaying. No agent. No pressure.',
     topics: ['What is life insurance?', 'Term vs. Whole Life', 'How much coverage do I need?', 'How to compare quotes', 'Common mistakes to avoid', 'When to review your policy'],
-    duration: '45 min', level: 'Beginner',
+    duration: '45 min', level: 'Beginner', href: '/dashboard/courses/life-insurance-101',
   },
   {
     id: 2, icon: '📋', title: 'Estate Planning Basics', lessons: 5,
     description: 'Wills, trusts, beneficiaries, power of attorney — explained simply. Protect what you\'ve built so your family keeps it.',
     topics: ['Why you need a will', 'Trusts explained simply', 'Beneficiary designations', 'Power of attorney', 'Where to start today'],
-    duration: '40 min', level: 'Beginner',
+    duration: '40 min', level: 'Beginner', href: null,
   },
   {
     id: 3, icon: '💰', title: 'Generational Wealth Playbook', lessons: 7,
     description: 'Real strategies for DC working families to start building wealth that outlasts them. Not Wall Street theory — practical steps you can take this week.',
     topics: ['The wealth gap explained', 'Starting with $0', 'Index funds & retirement accounts', 'Real estate 101', 'Teaching your kids about money', 'Credit and debt strategy', 'Building a family wealth plan'],
-    duration: '60 min', level: 'Intermediate',
+    duration: '60 min', level: 'Intermediate', href: null,
   },
   {
     id: 4, icon: '🏠', title: 'Protecting Your Family', lessons: 4,
     description: 'Power of attorney, guardianship, and family protection planning. Make sure your family is covered if something happens to you.',
     topics: ['Healthcare proxy & medical decisions', 'Guardianship for your children', 'Financial power of attorney', 'Emergency family planning checklist'],
-    duration: '30 min', level: 'Beginner',
+    duration: '30 min', level: 'Beginner', href: null,
   },
   {
     id: 5, icon: '🏦', title: 'Banking & Credit Foundations', lessons: 5,
     description: 'Build your credit score, eliminate predatory debt, and set up a banking foundation that works for your family.',
     topics: ['Understanding your credit score', 'How to dispute errors', 'Debt payoff strategies', 'Choosing the right bank accounts', 'Emergency fund basics'],
-    duration: '35 min', level: 'Beginner',
+    duration: '35 min', level: 'Beginner', href: null,
   },
   {
     id: 6, icon: '📊', title: 'DC Family Budget Blueprint', lessons: 4,
     description: 'A budgeting framework built for DMV Area cost of living — not generic finance advice that ignores where you actually live.',
     topics: ['DC cost of living reality check', 'The 50/30/20 rule adjusted for DC', 'Tools to track spending', 'Monthly family budget template'],
-    duration: '25 min', level: 'Beginner',
+    duration: '25 min', level: 'Beginner', href: null,
   },
 ];
 
@@ -81,9 +81,15 @@ export default function CoursesPage() {
               </ul>
             </div>
             <div className="px-6 pb-6">
-              <button className="w-full bg-[#0a1628] hover:bg-[#1a3a5c] text-white font-semibold py-3 rounded-full text-sm transition-colors">
-                Start Course →
-              </button>
+              {course.href ? (
+                <Link href={course.href} className="block w-full bg-[#0a1628] hover:bg-[#1a3a5c] text-white font-semibold py-3 rounded-full text-sm transition-colors text-center">
+                  Start Course →
+                </Link>
+              ) : (
+                <button disabled className="w-full bg-gray-100 text-gray-400 font-semibold py-3 rounded-full text-sm cursor-not-allowed">
+                  Coming Soon
+                </button>
+              )}
             </div>
           </div>
         ))}
