@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
       subscription_data: {
         metadata: { userId: (session.user as any).id, plan },
       },
-      success_url: `${baseUrl}/dashboard?subscribed=true`,
+      success_url: `${baseUrl}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/dashboard?canceled=true`,
     });
 
