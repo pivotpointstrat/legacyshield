@@ -27,14 +27,14 @@ export default function Home() {
             {/* Text Content */}
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-                Built for DC-Area Families
+                Built for DMV Area Families
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Protect Your Family.<br />
                 <span className="text-[#d4a017]">Build Your Legacy.</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                LegacyShield teaches DC-area families everything they need to know about life insurance,
+                LegacyShield teaches DMV Area families everything they need to know about life insurance,
                 estate planning, and building generational wealth — in plain language, from someone in your community.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

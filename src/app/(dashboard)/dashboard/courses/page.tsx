@@ -33,7 +33,7 @@ const courses = [
   },
   {
     id: 6, icon: '📊', title: 'DC Family Budget Blueprint', lessons: 4,
-    description: 'A budgeting framework built for DC-area cost of living — not generic finance advice that ignores where you actually live.',
+    description: 'A budgeting framework built for DMV Area cost of living — not generic finance advice that ignores where you actually live.',
     topics: ['DC cost of living reality check', 'The 50/30/20 rule adjusted for DC', 'Tools to track spending', 'Monthly family budget template'],
     duration: '25 min', level: 'Beginner',
   },
