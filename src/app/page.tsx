@@ -27,7 +27,7 @@ export default function Home() {
             {/* Text Content */}
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-                Built for DC Families
+                Built for DC-Area Families
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Protect Your Family.<br />
