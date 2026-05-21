@@ -6,15 +6,15 @@ import Providers from './providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '§§secret(LegacyShield — Protect Your Family. Build Your Legacy.',
+  title: 'LegacyShield Pro — Protect Your Family. Build Your Legacy.',
   description:
     'Financial literacy and estate education for DC working families. Learn life insurance, estate planning, and generational wealth strategies.',
   keywords: ['life insurance', 'estate planning', 'generational wealth', 'DC families', 'financial literacy'],
   openGraph: {
-    title: '§§secret(LegacyShield',
+    title: 'LegacyShield Pro — Protect Your Family. Build Your Legacy.',
     description: 'Protect Your Family. Build Your Legacy.',
     url: 'https://legacyshieldpro.com',
-    siteName: '§§secret(LegacyShield',
+    siteName: 'LegacyShield Pro',
     locale: 'en_US',
     type: 'website',
   },
