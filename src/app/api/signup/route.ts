@@ -33,6 +33,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: 'Account created successfully' }, { status: 201 });
   } catch (err) {
     console.error('[signup]', err);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    const message = err instanceof Error ? err.message : 'Unknown server error';
+    console.error('[signup] Error:', message);
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
