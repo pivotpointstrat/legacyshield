@@ -109,7 +109,7 @@ export default function Home() {
               {/* Credential badges */}
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start max-w-xs">
                 {[
-                  { icon: '⭐', label: '25-Year Law Enforcement Veteran' },
+                  { icon: '⭐', label: '28-Year Law Enforcement Veteran' },
                   { icon: '🤝', label: 'Mason & Community Leader' },
                   { icon: '🏠', label: 'DMV Native' },
                   { icon: '👨‍👩‍👧‍👦', label: 'Family Man & Father' },
