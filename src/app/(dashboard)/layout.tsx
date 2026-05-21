@@ -14,6 +14,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const session = await getServerSession(authOptions);
   if (!session) redirect('/login');
 
+  // Paywall: redirect to /subscribe if no active subscription
+  const subscriptionStatus = (session.user as any)?.subscriptionStatus;
+  if (subscriptionStatus !== 'active') redirect('/subscribe');
+
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}

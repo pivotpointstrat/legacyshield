@@ -1,7 +1,6 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import Link from 'next/link';
-import UpgradeButton from '@/components/UpgradeButton';
 
 const courses = [
   { id: 1, title: 'Life Insurance 101', icon: '🛡️', lessons: 6, completed: 0, description: 'Learn what you need, what to avoid, and how to stop overpaying.' },
@@ -24,33 +23,6 @@ export default async function DashboardPage() {
         <h1 className="text-3xl font-bold text-[#0a1628] mb-2">Welcome back, {firstName} 👋</h1>
         <p className="text-gray-500">Your family&apos;s financial future starts here. Keep building.</p>
       </div>
-
-      {/* Upgrade Banner — show if not subscribed */}
-      {!isActive && (
-        <div className="bg-gradient-to-r from-[#0a1628] to-[#1a3a5c] rounded-2xl p-8 mb-8 border border-[#d4a017]/20">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div>
-              <div className="text-[#d4a017] text-xs font-bold uppercase tracking-widest mb-2">🔓 Unlock Full Access</div>
-              <h2 className="text-2xl font-bold text-white mb-2">Start Your Membership</h2>
-              <p className="text-gray-300 text-sm max-w-lg">
-                Get full access to all 6 courses, monthly workshops, attorney Q&A, and everything your family needs to build lasting wealth.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-              <UpgradeButton
-                plan="community"
-                label="Community — $1 First Month"
-                className="bg-white text-[#0a1628] font-bold px-6 py-3 rounded-full text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
-              />
-              <UpgradeButton
-                plan="legacy_builder"
-                label="Legacy Builder — $1 First Month"
-                className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold px-6 py-3 rounded-full text-sm transition-colors whitespace-nowrap"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Active subscription banner */}
       {isActive && (
