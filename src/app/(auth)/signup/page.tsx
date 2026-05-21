@@ -44,7 +44,7 @@ export default function SignupPage() {
           <label className="block text-gray-300 text-sm font-medium mb-2">Full name</label>
           <input type="text" value={form.name} onChange={e => setForm({...form, name: e.target.value})} required
             className="w-full bg-[#0a1628] border border-[#1a3a5c] text-white px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#d4a017] focus:ring-1 focus:ring-[#d4a017]"
-            placeholder="Anthony Washington" />
+            placeholder="Enter Your Full Name" />
         </div>
         <div>
           <label className="block text-gray-300 text-sm font-medium mb-2">Email address</label>
