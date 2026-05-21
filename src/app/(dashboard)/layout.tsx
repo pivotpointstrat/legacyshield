@@ -24,7 +24,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
             <div className="w-9 h-9 bg-[#d4a017] rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-[#0a1628] font-bold">L</span>
             </div>
-            <span className="text-white font-bold text-lg tracking-tight">§§secret(LegacyShield</span>
+            <span className="text-white font-bold text-lg tracking-tight">§§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME) Pro</span>
           </Link>
         </div>
         {/* Nav */}
