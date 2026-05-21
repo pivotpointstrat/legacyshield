@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() { return new Resend(process.env.RESEND_API_KEY!); }
 
 const FROM = 'LegacyShield <hello@legacyshieldpro.com>';
 const SITE = 'https://legacyshieldpro.com';
@@ -76,7 +76,7 @@ export async function sendWelcomeEmail({
 </body>
 </html>`;
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: FROM,
     to: email,
     subject: `Welcome to LegacyShield, ${name}! Your ${planLabel} membership is active 🎉`,
@@ -114,7 +114,7 @@ export async function sendPaymentFailedEmail({
 </body>
 </html>`;
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: FROM,
     to: email,
     subject: 'Action needed: Update your LegacyShield payment method',
