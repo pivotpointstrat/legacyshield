@@ -21,28 +21,55 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-[#0a1628] text-white py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-            Built for DC Families
+      <section className="bg-[#0a1628] text-white py-16 md:py-24 px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Text Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+                Built for DC Families
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Protect Your Family.<br />
+                <span className="text-[#d4a017]">Build Your Legacy.</span>
+              </h1>
+              <p className="text-gray-300 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                LegacyShield teaches DC-area families everything they need to know about life insurance,
+                estate planning, and building generational wealth — in plain language, from someone in your community.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="#join" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-base px-8 py-4 rounded-full transition-colors">
+                  Get Started — $39/month
+                </a>
+                <a href="#features" className="border border-white/30 hover:border-white text-white font-semibold text-base px-8 py-4 rounded-full transition-colors">
+                  See What's Inside
+                </a>
+              </div>
+              <p className="text-gray-400 text-sm mt-6">No jargon. No pushy salespeople. Just real knowledge for real families.</p>
+            </div>
+            {/* Hero Image */}
+            <div className="flex-1 w-full lg:max-w-[520px] relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <img
+                  src="/images/hero.jpg"
+                  alt="Two women having a meaningful financial planning conversation"
+                  className="w-full h-[380px] md:h-[460px] object-cover object-center"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/40 to-transparent px-6 py-5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-[#d4a017] rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-[#0a1628] font-bold text-sm">✓</span>
+                    </div>
+                    <p className="text-white text-sm font-medium leading-snug">
+                      Real guidance from someone<br />who knows your community
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#d4a017]/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#d4a017]/5 rounded-full blur-xl pointer-events-none" />
+            </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Protect Your Family.<br />
-            <span className="text-[#d4a017]">Build Your Legacy.</span>
-          </h1>
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            LegacyShield teaches DC-area families everything they need to know about life insurance,
-            estate planning, and building generational wealth — in plain language, from someone in your community.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#join" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-base px-8 py-4 rounded-full transition-colors">
-              Get Started — $39/month
-            </a>
-            <a href="#features" className="border border-white/30 hover:border-white text-white font-semibold text-base px-8 py-4 rounded-full transition-colors">
-              See What's Inside
-            </a>
-          </div>
-          <p className="text-gray-400 text-sm mt-6">No jargon. No pushy salespeople. Just real knowledge for real families.</p>
         </div>
       </section>
 
