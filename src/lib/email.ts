@@ -32,7 +32,7 @@ export async function sendWelcomeEmail({
             <div style="width:40px;height:40px;background:#d4a017;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">
               <span style="color:#0a1628;font-weight:bold;font-size:18px">L</span>
             </div>
-            <span style="color:white;font-size:22px;font-weight:700">§§secret(§§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME)</span>
+            <span style="color:white;font-size:22px;font-weight:700">§§secret(LegacyShield</span>
           </div>
         </td></tr>
 
@@ -61,12 +61,12 @@ export async function sendWelcomeEmail({
 
           <hr style="border:none;border-top:1px solid #e5e7eb;margin:0 0 24px">
           <p style="color:#9ca3af;font-size:13px;margin:0">Questions? Reply to this email — we&apos;re here to help. Built for DC families, by someone who lives and breathes this community.</p>
-          <p style="color:#9ca3af;font-size:13px;margin:8px 0 0">— The §§secret(§§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME) Team</p>
+          <p style="color:#9ca3af;font-size:13px;margin:8px 0 0">— The §§secret(LegacyShield Team</p>
         </td></tr>
 
         <!-- Footer -->
         <tr><td style="padding:20px;text-align:center">
-          <p style="color:#9ca3af;font-size:12px;margin:0">§§secret(§§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME) · Washington DC Metro Area</p>
+          <p style="color:#9ca3af;font-size:12px;margin:0">§§secret(LegacyShield · Washington DC Metro Area</p>
           <p style="color:#9ca3af;font-size:12px;margin:4px 0 0"><a href="${SITE}" style="color:#d4a017;text-decoration:none">legacyshieldpro.com</a></p>
         </td></tr>
 
@@ -100,7 +100,7 @@ export async function sendPaymentFailedEmail({
     <tr><td align="center">
       <table width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:white;border-radius:16px;overflow:hidden">
         <tr><td style="background:#0a1628;padding:28px 40px;text-align:center">
-          <span style="color:white;font-size:20px;font-weight:700">§§secret(§§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME)</span>
+          <span style="color:white;font-size:20px;font-weight:700">§§secret(LegacyShield</span>
         </td></tr>
         <tr><td style="padding:40px">
           <h1 style="color:#0a1628;font-size:22px;margin:0 0 12px">Action needed, ${name}</h1>

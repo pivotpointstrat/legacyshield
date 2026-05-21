@@ -82,7 +82,7 @@ export default function Home() {
               <div className="relative">
                 <img
                   src="/images/anthony.jpg"
-                  alt="Anthony Washington — Founder of §§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME)"
+                  alt="Anthony Washington — Founder of LegacyShield"
                   className="w-40 h-40 rounded-full object-cover object-top shadow-xl ring-4 ring-[#d4a017]/40"
                 />
                 <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-[#d4a017] rounded-full flex items-center justify-center shadow-md">
@@ -138,7 +138,7 @@ export default function Home() {
                   When I retired, I asked myself: <span className="text-[#0a1628] font-semibold italic">"Who is actually sitting down with working families in the DMV and explaining this stuff plainly?"</span> The answer, too often, was nobody.
                 </p>
                 <p>
-                  §§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME) Pro is my answer to that. As a Mason, a father, a neighbor, and a 25-year public servant — I built this for the families I know and love in this community. Not Wall Street. Not generic advice. Real knowledge, from someone who has walked these streets.
+                  LegacyShield Pro is my answer to that. As a Mason, a father, a neighbor, and a 25-year public servant — I built this for the families I know and love in this community. Not Wall Street. Not generic advice. Real knowledge, from someone who has walked these streets.
                 </p>
                 <p className="text-[#0a1628] font-semibold">
                   Your family deserves a legacy. Let's build it together.

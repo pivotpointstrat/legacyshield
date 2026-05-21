@@ -9,7 +9,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             <div className="w-10 h-10 bg-[#d4a017] rounded-full flex items-center justify-center">
               <span className="text-[#0a1628] font-bold text-lg">L</span>
             </div>
-            <span className="text-white font-bold text-2xl tracking-tight">§§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME) Pro</span>
+            <span className="text-white font-bold text-2xl tracking-tight">LegacyShield Pro</span>
           </Link>
           <p className="text-gray-400 text-sm">Protect Your Family. Build Your Legacy.</p>
         </div>
