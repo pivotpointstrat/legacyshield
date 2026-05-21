@@ -3,7 +3,7 @@ import { stripe } from '@/lib/stripe';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 import Stripe from 'stripe';
-
+import { sendWelcomeEmail, sendPaymentFailedEmail } from '@/lib/email';
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
@@ -27,13 +27,25 @@ export async function POST(req: NextRequest) {
         const session = event.data.object as Stripe.Checkout.Session;
         const { userId, plan } = session.metadata ?? {};
         if (userId) {
-          await User.findByIdAndUpdate(userId, {
-            subscriptionStatus: 'active',
-            plan: plan || 'community',
-            stripeCustomerId: session.customer as string,
-            stripeSubscriptionId: session.subscription as string,
-          });
+          const user = await User.findByIdAndUpdate(
+            userId,
+            {
+              subscriptionStatus: 'active',
+              plan: plan || 'community',
+              stripeCustomerId: session.customer as string,
+              stripeSubscriptionId: session.subscription as string,
+            },
+            { new: true }
+          );
           console.log(`[webhook] Activated subscription for user ${userId}`);
+          // Send welcome email
+          if (user?.email) {
+            await sendWelcomeEmail({
+              name: user.name,
+              email: user.email,
+              plan: (plan || 'community') as 'community' | 'legacy_builder',
+            }).catch(err => console.error('[webhook] Welcome email failed:', err));
+          }
         }
         break;
       }
@@ -51,11 +63,19 @@ export async function POST(req: NextRequest) {
       case 'invoice.payment_failed': {
         const invoice = event.data.object as Stripe.Invoice;
         const customerId = invoice.customer as string;
-        await User.findOneAndUpdate(
+        const user = await User.findOneAndUpdate(
           { stripeCustomerId: customerId },
-          { subscriptionStatus: 'inactive' }
+          { subscriptionStatus: 'inactive' },
+          { new: true }
         );
         console.log(`[webhook] Payment failed for customer ${customerId}`);
+        // Send payment failed email
+        if (user?.email) {
+          await sendPaymentFailedEmail({
+            name: user.name,
+            email: user.email,
+          }).catch(err => console.error('[webhook] Payment failed email error:', err));
+        }
         break;
       }
 
@@ -72,8 +92,8 @@ export async function POST(req: NextRequest) {
 
       case 'customer.subscription.updated': {
         const sub = event.data.object as Stripe.Subscription;
-        const priceId = sub.items.data[0]?.price.unit_amount;
-        const plan = priceId === 9900 ? 'legacy_builder' : 'community';
+        const unitAmount = sub.items.data[0]?.price.unit_amount;
+        const plan = unitAmount === 9900 ? 'legacy_builder' : 'community';
         await User.findOneAndUpdate(
           { stripeSubscriptionId: sub.id },
           { plan, subscriptionStatus: sub.status === 'active' ? 'active' : 'inactive' }
