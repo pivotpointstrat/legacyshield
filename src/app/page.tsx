@@ -15,7 +15,7 @@ export default function Home() {
             <a href="#about" className="text-gray-300 hover:text-white text-sm transition-colors">About</a>
             <a href="#features" className="text-gray-300 hover:text-white text-sm transition-colors">What You Get</a>
             <a href="#pricing" className="text-gray-300 hover:text-white text-sm transition-colors">Pricing</a>
-            <a href="#join" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-semibold text-sm px-5 py-2 rounded-full transition-colors">Join Now</a>
+            <a href="/signup" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-semibold text-sm px-5 py-2 rounded-full transition-colors">Join Now</a>
           </div>
         </div>
       </nav>
@@ -38,7 +38,7 @@ export default function Home() {
                 estate planning, and building generational wealth — in plain language, from someone in your community.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#join" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-base px-8 py-4 rounded-full transition-colors">
+                <a href="/signup?plan=community" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-base px-8 py-4 rounded-full transition-colors">
                   Get Started — $39/month
                 </a>
                 <a href="#features" className="border border-white/30 hover:border-white text-white font-semibold text-base px-8 py-4 rounded-full transition-colors">
@@ -175,7 +175,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#join" className="block text-center bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold py-3 rounded-full transition-colors">
+              <a href="/signup?plan=community" className="block text-center bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold py-3 rounded-full transition-colors">
                 Join Community
               </a>
             </div>
@@ -197,7 +197,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#join" className="block text-center bg-[#0a1628] hover:bg-[#0f2040] text-[#d4a017] font-bold py-3 rounded-full transition-colors">
+              <a href="/signup?plan=legacy_builder" className="block text-center bg-[#0a1628] hover:bg-[#0f2040] text-[#d4a017] font-bold py-3 rounded-full transition-colors">
                 Build My Legacy
               </a>
             </div>
