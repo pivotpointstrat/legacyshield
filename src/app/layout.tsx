@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '§§secret(LegacyShield',
     description: 'Protect Your Family. Build Your Legacy.',
-    url: 'https://legacyshielddc.com',
+    url: 'https://legacyshieldpro.com',
     siteName: '§§secret(LegacyShield',
     locale: 'en_US',
     type: 'website',
