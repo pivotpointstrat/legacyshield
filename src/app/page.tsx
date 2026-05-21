@@ -3,7 +3,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
 
       {/* Nav */}
-      <nav className="bg-[#0a1628] border-b border-[#1a3a5c]">
+      <nav className="bg-[#0a1628] border-b border-[#1a3a5c] sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-[#d4a017] rounded-full flex items-center justify-center">
@@ -12,7 +12,7 @@ export default function Home() {
             <span className="text-white font-bold text-xl tracking-tight">LegacyShield</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-gray-300 hover:text-white text-sm transition-colors">About</a>
+            <a href="#founder" className="text-gray-300 hover:text-white text-sm transition-colors">About</a>
             <a href="#features" className="text-gray-300 hover:text-white text-sm transition-colors">What You Get</a>
             <a href="#pricing" className="text-gray-300 hover:text-white text-sm transition-colors">Pricing</a>
             <a href="/signup" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-semibold text-sm px-5 py-2 rounded-full transition-colors">Join Now</a>
@@ -68,6 +68,75 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#d4a017]/10 rounded-full blur-2xl pointer-events-none" />
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#d4a017]/5 rounded-full blur-xl pointer-events-none" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section id="founder" className="py-20 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Avatar + Identity */}
+            <div className="flex flex-col items-center lg:items-start gap-5 flex-shrink-0">
+              <div className="relative">
+                <div className="w-40 h-40 bg-[#0a1628] rounded-full flex items-center justify-center shadow-xl ring-4 ring-[#d4a017]/30">
+                  <span className="text-[#d4a017] font-bold text-5xl tracking-tight">AW</span>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-[#d4a017] rounded-full flex items-center justify-center shadow-md">
+                  <span className="text-[#0a1628] text-lg">🛡️</span>
+                </div>
+              </div>
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl font-bold text-[#0a1628]">Anthony Washington</h3>
+                <p className="text-[#d4a017] font-semibold text-sm mt-1">Founder & Community Advocate</p>
+              </div>
+              {/* Credential badges */}
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start max-w-xs">
+                {[
+                  { icon: '⭐', label: '25-Year Law Enforcement Veteran' },
+                  { icon: '🤝', label: 'Mason & Community Leader' },
+                  { icon: '🏠', label: 'DMV Native' },
+                  { icon: '👨‍👩‍👧‍👦', label: 'Family Man & Father' },
+                ].map((badge, i) => (
+                  <div key={i} className="flex items-center gap-1.5 bg-[#0a1628]/5 border border-[#0a1628]/10 text-[#0a1628] text-xs font-medium px-3 py-1.5 rounded-full">
+                    <span>{badge.icon}</span>
+                    <span>{badge.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Bio */}
+            <div className="flex-1">
+              <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
+                Meet the Founder
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-5 leading-tight">
+                A Face You Can Trust.<br />
+                <span className="text-[#d4a017]">A Voice From Your Community.</span>
+              </h2>
+              <div className="space-y-4 text-gray-600 text-base leading-relaxed">
+                <p>
+                  I spent 25 years serving the DC metro area in law enforcement. In that time, I sat across from families in their most vulnerable moments — and I saw firsthand how financial unpreparedness turns hardship into crisis.
+                </p>
+                <p>
+                  When I retired, I asked myself: <span className="text-[#0a1628] font-semibold italic">"Who is actually sitting down with working families in the DMV and explaining this stuff plainly?"</span> The answer, too often, was nobody.
+                </p>
+                <p>
+                  §§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME) is my answer to that. As a Mason, a father, a neighbor, and a 25-year public servant — I built this for the families I know and love in this community. Not Wall Street. Not generic advice. Real knowledge, from someone who has walked these streets.
+                </p>
+                <p className="text-[#0a1628] font-semibold">
+                  Your family deserves a legacy. Let's build it together.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#join" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-sm px-7 py-3 rounded-full transition-colors text-center">
+                  Join the Community
+                </a>
+                <a href="#features" className="border border-[#0a1628]/20 hover:border-[#0a1628] text-[#0a1628] font-semibold text-sm px-7 py-3 rounded-full transition-colors text-center">
+                  See What's Inside
+                </a>
+              </div>
             </div>
           </div>
         </div>
