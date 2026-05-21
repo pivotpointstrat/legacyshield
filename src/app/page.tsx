@@ -39,7 +39,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="/signup?plan=community" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-base px-8 py-4 rounded-full transition-colors">
-                  Get Started — $39/month
+                  Get Started — $1 First Month
                 </a>
                 <a href="#features" className="border border-white/30 hover:border-white text-white font-semibold text-base px-8 py-4 rounded-full transition-colors">
                   See What's Inside
@@ -244,8 +244,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#0f2040] border border-[#1a3a5c] rounded-2xl p-8">
               <div className="text-gray-300 text-sm font-semibold uppercase tracking-wider mb-4">Community Member</div>
-              <div className="text-4xl font-bold text-white mb-1">$39<span className="text-xl font-normal text-gray-400">/month</span></div>
-              <p className="text-gray-400 text-sm mb-8">Or $399/year — save $69</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="text-5xl font-bold text-[#d4a017]">$1</span>
+                <span className="text-gray-400 text-sm">first month</span>
+              </div>
+              <p className="text-gray-400 text-sm mb-8">Then $39/month · Cancel anytime</p>
               <ul className="space-y-3 mb-8">
                 {[
                   'Full video course library',
@@ -266,8 +269,11 @@ export default function Home() {
             <div className="bg-[#d4a017] rounded-2xl p-8 relative overflow-hidden">
               <div className="absolute top-4 right-4 bg-[#0a1628] text-[#d4a017] text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</div>
               <div className="text-[#0a1628] text-sm font-semibold uppercase tracking-wider mb-4">Legacy Builder</div>
-              <div className="text-4xl font-bold text-[#0a1628] mb-1">$99<span className="text-xl font-normal text-[#0a1628]/60">/month</span></div>
-              <p className="text-[#0a1628]/60 text-sm mb-8">Everything in Community, plus:</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="text-5xl font-bold text-[#0a1628]">$1</span>
+                <span className="text-[#0a1628]/60 text-sm">first month</span>
+              </div>
+              <p className="text-[#0a1628]/60 text-sm mb-8">Then $99/month · Cancel anytime</p>
               <ul className="space-y-3 mb-8">
                 {[
                   'Everything in Community',

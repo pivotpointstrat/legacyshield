@@ -39,12 +39,12 @@ export default async function DashboardPage() {
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
               <UpgradeButton
                 plan="community"
-                label="Community — $39/mo"
+                label="Community — $1 First Month"
                 className="bg-white text-[#0a1628] font-bold px-6 py-3 rounded-full text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
               />
               <UpgradeButton
                 plan="legacy_builder"
-                label="Legacy Builder — $99/mo"
+                label="Legacy Builder — $1 First Month"
                 className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold px-6 py-3 rounded-full text-sm transition-colors whitespace-nowrap"
               />
             </div>

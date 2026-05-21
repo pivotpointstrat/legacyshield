@@ -5,16 +5,41 @@ import { stripe } from '@/lib/stripe';
 
 const PLANS = {
   community: {
-    name: 'Community Plan',
-    amount: 3900, // $39.00 in cents
+    name: 'LegacyShield Community',
+    amount: 3900, // $39.00/mo after first month
+    firstMonthAmount: 100, // $1.00 first month
     description: 'Full course library, monthly workshops, community access',
+    couponId: 'first_month_community', // idempotent coupon ID
+    discountAmount: 3800, // $39 - $1 = $38 off
   },
   legacy_builder: {
-    name: 'Legacy Builder Plan',
-    amount: 9900, // $99.00 in cents
+    name: 'LegacyShield Legacy Builder',
+    amount: 9900, // $99.00/mo after first month
+    firstMonthAmount: 100, // $1.00 first month
     description: 'Everything in Community + attorney Q&A, 1-on-1 coaching, priority support',
+    couponId: 'first_month_legacy_builder', // idempotent coupon ID
+    discountAmount: 9800, // $99 - $1 = $98 off
   },
 };
+
+async function getOrCreateFirstMonthCoupon(plan: keyof typeof PLANS): Promise<string> {
+  const planData = PLANS[plan];
+  try {
+    // Try to retrieve existing coupon first
+    const existing = await stripe.coupons.retrieve(planData.couponId);
+    return existing.id;
+  } catch {
+    // Coupon doesn't exist — create it
+    const coupon = await stripe.coupons.create({
+      id: planData.couponId,
+      amount_off: planData.discountAmount,
+      currency: 'usd',
+      duration: 'once', // applies only to first invoice
+      name: `$1 First Month — ${planData.name}`,
+    });
+    return coupon.id;
+  }
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -32,6 +57,9 @@ export async function POST(req: NextRequest) {
 
     const baseUrl = process.env.NEXTAUTH_URL || 'https://legacyshieldpro.com';
 
+    // Get or create the $1 first month coupon for this plan
+    const couponId = await getOrCreateFirstMonthCoupon(plan as keyof typeof PLANS);
+
     const checkoutSession = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'subscription',
@@ -48,13 +76,18 @@ export async function POST(req: NextRequest) {
             product_data: {
               name: planData.name,
               description: planData.description,
-              images: ['https://legacyshieldpro.com/logo.png'],
             },
             unit_amount: planData.amount,
           },
           quantity: 1,
         },
       ],
+      discounts: [
+        { coupon: couponId }, // $1 first month — auto-expires after first invoice
+      ],
+      subscription_data: {
+        metadata: { userId: (session.user as any).id, plan },
+      },
       success_url: `${baseUrl}/dashboard?subscribed=true`,
       cancel_url: `${baseUrl}/dashboard?canceled=true`,
     });
