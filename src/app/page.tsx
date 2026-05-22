@@ -168,7 +168,17 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { stat: '56%', label: 'of DC residents have life insurance', sub: 'Well below the national average — leaving families exposed' },
+              {
+                stat: '56%',
+                label: 'of District of Columbia residents have life insurance',
+                sub: 'Approximately 56% of District of Columbia residents have life insurance, which remains below the national average. This coverage gap exposes local families to severe financial risks, including the inability to cover final expenses, replace lost income, or maintain housing following an unexpected loss.',
+                refs: [
+                  'Policygenius — Life insurance statistics & data (2024)',
+                  'Consumer Affairs / Journal of Consumer Research — Life insurance statistics 2026',
+                  'Financial Health Network — Life Insurance in America: Understanding and Closing Coverage Gaps',
+                  'DC Fiscal Policy Institute — DC Has Disparities in Health Coverage Despite Its Low Uninsured Rate',
+                ]
+              },
               { stat: '$0', label: 'estate plans for most working families', sub: 'Most families have no will, no trust, no plan — until it\'s too late' },
               { stat: '1/7th', label: 'the wealth of white families', sub: 'The racial wealth gap is real — and financial literacy is the starting point to close it' },
             ].map((item, i) => (
@@ -176,6 +186,13 @@ export default function Home() {
                 <div className="text-4xl font-bold text-[#d4a017] mb-2">{item.stat}</div>
                 <div className="font-semibold text-[#0a1628] mb-3">{item.label}</div>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.sub}</p>
+                {'refs' in item && (item as any).refs && (
+                  <ul className="mt-3 text-left space-y-1">
+                    {(item as any).refs.map((ref: string, ri: number) => (
+                      <li key={ri} className="text-gray-400 text-xs leading-snug">• {ref}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
