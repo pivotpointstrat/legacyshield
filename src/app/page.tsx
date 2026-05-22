@@ -189,7 +189,14 @@ export default function Home() {
                   'AARP Research — Disparities in Wealth Transfer: Experiences and Expectations of Adults Ages 50+ (June 2024)',
                 ]
               },
-              { stat: '1/7th', label: 'the wealth of white families', sub: 'The racial wealth gap is real — and financial literacy is the starting point to close it' },
+              {
+                stat: '1/7th',
+                label: 'the wealth of white families held by Black households',
+                sub: 'The typical Black household holds approximately $44,100 in net worth, compared to $284,310 for the typical white household. Black families possess only about 15 cents (or roughly 1/7th) of every dollar held by white families.',
+                refs: [
+                  'National Community Reinvestment Coalition (NCRC) — The Racial Wealth Gap 1992 to 2022 (October 2024)',
+                ]
+              },
             ].map((item, i) => (
               <div key={i} className="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
                 <div className="text-4xl font-bold text-[#d4a017] mb-2">{item.stat}</div>
