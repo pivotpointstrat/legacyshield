@@ -179,7 +179,16 @@ export default function Home() {
                   'DC Fiscal Policy Institute — DC Has Disparities in Health Coverage Despite Its Low Uninsured Rate',
                 ]
               },
-              { stat: '$0', label: 'estate plans for most working families', sub: 'Most families have no will, no trust, no plan — until it\'s too late' },
+              {
+                stat: '69.4%',
+                label: 'of Black homeowners age 50+ have no will or trust',
+                sub: '69.4% of Black homeowners age 50+ do not have a will or trust, compared with 34.9% of older white homeowners — a gap that puts generational wealth at serious risk.',
+                refs: [
+                  'Urban Institute — Prospective Heirs\' Property among Older Homeowners (Oct 2024)',
+                  'Caring.com — Wills & Estate Planning Study (2021 and annual reports)',
+                  'AARP Research — Disparities in Wealth Transfer: Experiences and Expectations of Adults Ages 50+ (June 2024)',
+                ]
+              },
               { stat: '1/7th', label: 'the wealth of white families', sub: 'The racial wealth gap is real — and financial literacy is the starting point to close it' },
             ].map((item, i) => (
               <div key={i} className="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
