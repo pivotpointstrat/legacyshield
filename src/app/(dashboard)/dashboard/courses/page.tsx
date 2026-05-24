@@ -11,13 +11,13 @@ const courses = [
     id: 2, icon: '📋', title: 'Estate Planning Basics', lessons: 5,
     description: 'Wills, trusts, beneficiaries, power of attorney — explained simply. Protect what you\'ve built so your family keeps it.',
     topics: ['Why you need a will', 'Trusts explained simply', 'Beneficiary designations', 'Power of attorney', 'Where to start today'],
-    duration: '40 min', level: 'Beginner', href: null,
+    duration: '40 min', level: 'Beginner', href: '/dashboard/courses/estate-planning-basics',
   },
   {
     id: 3, icon: '💰', title: 'Generational Wealth Playbook', lessons: 7,
     description: 'Real strategies for DC working families to start building wealth that outlasts them. Not Wall Street theory — practical steps you can take this week.',
     topics: ['The wealth gap explained', 'Starting with $0', 'Index funds & retirement accounts', 'Real estate 101', 'Teaching your kids about money', 'Credit and debt strategy', 'Building a family wealth plan'],
-    duration: '60 min', level: 'Intermediate', href: null,
+    duration: '60 min', level: 'Intermediate', href: '/dashboard/courses/generational-wealth-playbook',
   },
   {
     id: 4, icon: '🏠', title: 'Protecting Your Family', lessons: 4,

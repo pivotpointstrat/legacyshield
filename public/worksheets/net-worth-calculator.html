@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Worth Calculator — LegacyShield Pro</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #f8f7f4; color: #1a1a1a; padding: 40px 20px; }
+  .page { max-width: 750px; margin: 0 auto; background: white; padding: 50px; border: 2px solid #0a1628; }
+  .header { text-align: center; margin-bottom: 40px; border-bottom: 3px solid #d4a017; padding-bottom: 24px; }
+  .brand { font-size: 13px; font-family: Arial, sans-serif; letter-spacing: 3px; color: #d4a017; text-transform: uppercase; margin-bottom: 8px; }
+  h1 { font-size: 28px; color: #0a1628; margin-bottom: 8px; }
+  .subtitle { font-size: 14px; color: #666; font-style: italic; }
+  .quote { background: #f8f5ed; border-left: 4px solid #d4a017; padding: 16px 20px; margin: 30px 0; font-style: italic; font-size: 14px; color: #333; }
+  .quote span { display: block; margin-top: 8px; font-style: normal; font-size: 12px; color: #888; }
+  .section { margin-bottom: 32px; }
+  .section-title { background: #0a1628; color: white; padding: 10px 16px; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #e8e4d8; font-family: Arial, sans-serif; font-size: 12px; padding: 8px 12px; text-align: left; color: #444; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { border-bottom: 1px solid #e8e4d8; padding: 10px 12px; font-size: 14px; }
+  td:last-child { text-align: right; min-width: 120px; }
+  .write-in { border-bottom: 1px solid #999; display: inline-block; min-width: 100px; height: 18px; }
+  .total-row td { background: #f8f5ed; font-weight: bold; font-family: Arial, sans-serif; font-size: 14px; border-top: 2px solid #0a1628; }
+  .net-worth-box { border: 3px solid #d4a017; padding: 24px; text-align: center; margin: 32px 0; background: #fffdf5; }
+  .net-worth-box .label { font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 8px; }
+  .net-worth-box .amount { font-size: 32px; color: #0a1628; font-weight: bold; border-bottom: 2px solid #0a1628; display: inline-block; min-width: 200px; padding-bottom: 4px; }
+  .dti-section { background: #f0f4f8; padding: 20px; margin: 24px 0; }
+  .dti-section h3 { font-family: Arial, sans-serif; font-size: 14px; color: #0a1628; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .formula { font-family: Arial, monospace; font-size: 13px; background: white; padding: 10px; border: 1px solid #ddd; margin: 8px 0; }
+  .scale { display: flex; gap: 0; margin-top: 12px; font-family: Arial, sans-serif; font-size: 11px; }
+  .scale-item { flex: 1; padding: 6px 4px; text-align: center; }
+  .scale-item.green { background: #d4edda; color: #155724; }
+  .scale-item.yellow { background: #fff3cd; color: #856404; }
+  .scale-item.orange { background: #ffe0b2; color: #e65100; }
+  .scale-item.red { background: #f8d7da; color: #721c24; }
+  .action-box { border: 2px solid #0a1628; padding: 20px; margin-top: 32px; }
+  .action-box h3 { font-family: Arial, sans-serif; font-size: 13px; color: #0a1628; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .action-box ul { list-style: none; padding: 0; }
+  .action-box li { font-size: 13px; padding: 6px 0; border-bottom: 1px dashed #ddd; display: flex; align-items: center; gap: 10px; }
+  .action-box li:last-child { border-bottom: none; }
+  .checkbox { width: 14px; height: 14px; border: 1.5px solid #0a1628; display: inline-block; flex-shrink: 0; }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-family: Arial, sans-serif; font-size: 11px; color: #999; }
+  @media print { body { background: white; padding: 0; } .page { border: none; padding: 20px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="brand">LegacyShield Pro</div>
+    <h1>Personal Net Worth Calculator</h1>
+    <div class="subtitle">Know your number. Build your future.</div>
+  </div>
+
+  <div class="quote">
+    &ldquo;In law enforcement, before we responded to any situation, we gathered intelligence first. You never walk into a scene blind. Building wealth works the same way. Before you can build anything, you have to know exactly what you are working with.&rdquo;
+    <span>&mdash; Anthony Washington, Founder, LegacyShield Pro</span>
+  </div>
+
+  <p style="font-size:13px;color:#555;margin-bottom:28px;">Complete this worksheet honestly. A negative net worth is not failure &mdash; it is your starting point. Every family that built wealth started with this exact exercise.</p>
+
+  <div class="section">
+    <div class="section-title">Part 1: Your Assets (What You Own)</div>
+    <table>
+      <tr><th>Asset</th><th>Current Value</th></tr>
+      <tr><td>Home (current market value)</td><td><span class="write-in"></span></td></tr>
+      <tr><td>401(k) / 403(b) / 457 balance</td><td><span class="write-in"></span></td></tr>
+      <tr><td>IRA / Roth IRA balance</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Pension (estimated lump sum value)</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Checking &amp; savings accounts</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Vehicle(s) — current market value</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Investment / brokerage accounts</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Life insurance cash value (whole life only)</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Business ownership interest</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Other assets</td><td><span class="write-in"></span></td></tr>
+      <tr class="total-row"><td>TOTAL ASSETS (A)</td><td><span class="write-in"></span></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Part 2: Your Liabilities (What You Owe)</div>
+    <table>
+      <tr><th>Liability</th><th>Balance Owed</th></tr>
+      <tr><td>Mortgage balance</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Car loan(s)</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Credit card balances (all cards)</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Student loans</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Personal loans</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Medical debt</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Money owed to family / friends</td><td><span class="write-in"></span></td></tr>
+      <tr><td>Other debts</td><td><span class="write-in"></span></td></tr>
+      <tr class="total-row"><td>TOTAL LIABILITIES (B)</td><td><span class="write-in"></span></td></tr>
+    </table>
+  </div>
+
+  <div class="net-worth-box">
+    <div class="label">Your Net Worth = Total Assets (A) &minus; Total Liabilities (B)</div>
+    <div class="amount">&nbsp;</div>
+    <div style="font-size:12px;color:#888;margin-top:10px;font-family:Arial,sans-serif;">Date calculated: ___________________</div>
+  </div>
+
+  <div class="dti-section">
+    <h3>Bonus: Your Debt-to-Income (DTI) Ratio</h3>
+    <div class="formula">DTI = Total Monthly Debt Payments &divide; Gross Monthly Income &times; 100</div>
+    <table style="margin-top:10px;">
+      <tr><td style="font-size:13px;">Total monthly debt payments: $</td><td><span class="write-in"></span></td></tr>
+      <tr><td style="font-size:13px;">Gross monthly income: $</td><td><span class="write-in"></span></td></tr>
+      <tr class="total-row"><td style="font-size:13px;">My DTI ratio:</td><td><span class="write-in"></span>%</td></tr>
+    </table>
+    <div class="scale">
+      <div class="scale-item green">Below 20%<br>Healthy</div>
+      <div class="scale-item yellow">20&ndash;35%<br>Manageable</div>
+      <div class="scale-item orange">36&ndash;50%<br>Limiting</div>
+      <div class="scale-item red">Above 50%<br>Critical</div>
+    </div>
+  </div>
+
+  <div class="action-box">
+    <h3>My Next Steps</h3>
+    <ul>
+      <li><span class="checkbox"></span> Pull free credit report at AnnualCreditReport.com</li>
+      <li><span class="checkbox"></span> List all debts &mdash; choose Snowball or Avalanche method</li>
+      <li><span class="checkbox"></span> Review all beneficiary designations on retirement accounts &amp; insurance</li>
+      <li><span class="checkbox"></span> Create or update my will at TrustAndWill.com or FreeWill.com</li>
+      <li><span class="checkbox"></span> Calculate my life insurance need using the DIME method</li>
+      <li><span class="checkbox"></span> Schedule my first Family Money Meeting</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    LegacyShield Pro &mdash; Financial Literacy &amp; Estate Education for DMV Families &mdash; legacyshieldpro.com<br>
+    This worksheet is for educational purposes only and does not constitute financial or legal advice.
+  </div>
+</div>
+</body>
+</html>
