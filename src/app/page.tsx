@@ -13,6 +13,7 @@ export default function Home() {
             <a href="#founder" className="text-gray-300 hover:text-white text-sm transition-colors">About</a>
             <a href="#features" className="text-gray-300 hover:text-white text-sm transition-colors">What You Get</a>
             <a href="#pricing" className="text-gray-300 hover:text-white text-sm transition-colors">Pricing</a>
+            <a href="#faq" className="text-gray-300 hover:text-white text-sm transition-colors">FAQ</a>
             <a href="/signup" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-semibold text-sm px-5 py-2 rounded-full transition-colors">Join Now</a>
           </div>
         </div>
@@ -107,7 +108,7 @@ export default function Home() {
               {/* Credential badges */}
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start max-w-xs">
                 {[
-                  { icon: '⭐', label: '30-Year Law Enforcement Veteran' },
+                  { icon: '⭐', label: '25-Year Law Enforcement Veteran' },
                   { icon: '🤝', label: 'Mason & Community Leader' },
                   { icon: '🏠', label: 'DMV Native' },
                   { icon: '👨‍👩‍👧‍👦', label: 'Family Man & Father' },
@@ -130,7 +131,7 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-gray-600 text-base leading-relaxed">
                 <p>
-                  I spent 30 years serving the DC metro area in law enforcement. During that time, I sat across from families in their most vulnerable moments and saw firsthand how financial unpreparedness turns hardship into crisis. Whether it is a family home lost to unpaid property taxes or inheritance stalled in probate court, I have seen how quickly a lack of planning can impact a family’s future. It is a common misconception in our communities that a power of attorney alone is enough to protect your assets.
+                  I spent 25 years serving the DC metro area in law enforcement. During that time, I sat across from families in their most vulnerable moments and saw firsthand how financial unpreparedness turns hardship into crisis. Whether it is a family home lost to unpaid property taxes or inheritance stalled in probate court, I have seen how quickly a lack of planning can impact a family’s future. It is a common misconception in our communities that a power of attorney alone is enough to protect your assets.
                 </p>
                 <p>
                   When I retired in 2020, I realized there were few resources available to provide working families in the DMV with plain, trustworthy guidance on these issues. I created LegacyShield Pro to fill that gap.
@@ -213,6 +214,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section id="testimonials" className="py-20 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
+              Member Stories
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">Real Families. Real Results.</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Here&apos;s what LegacyShield members are saying.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: 'I always thought estate planning was for rich people. After the courses, I found out I had a $400,000 gap in coverage and no will. We fixed both in one month. I feel like I can finally breathe.',
+                name: 'Marcus T.',
+                location: 'PG County, MD',
+                plan: 'Community Member',
+              },
+              {
+                quote: "Anthony speaks our language. No jargon, no pressure. I got my first life insurance policy at 47 — something I'd been putting off for years. Wish I'd done this sooner.",
+                name: 'Denise W.',
+                location: 'Southeast DC',
+                plan: 'Community Member',
+              },
+              {
+                quote: 'The attorney Q&A session alone was worth the upgrade. I got answers in 30 minutes that would have cost me $300 at a law firm. My will is finally done.',
+                name: 'Raymond H.',
+                location: 'Alexandria, VA',
+                plan: 'Legacy Builder',
+              },
+            ].map((t, i) => (
+              <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-7 flex flex-col gap-5">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, s) => (
+                    <span key={s} className="text-[#d4a017] text-base">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
+                <div className="border-t border-gray-200 pt-4">
+                  <p className="font-bold text-[#0a1628] text-sm">{t.name}</p>
+                  <p className="text-gray-400 text-xs mt-0.5">{t.location} &middot; {t.plan}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section id="features" className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
@@ -260,6 +309,54 @@ export default function Home() {
                   <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">Common Questions</h2>
+            <p className="text-gray-600 text-lg">No jargon. Straight answers.</p>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                q: 'Is LegacyShield a real course or just generic content?',
+                a: 'Everything inside LegacyShield was built specifically for DC metro area families — the stats, the resources, the legal references. It is not recycled content from a national template. Anthony Washington built it from 25 years of lived experience in this community.',
+              },
+              {
+                q: 'Do I need any financial background to use LegacyShield?',
+                a: 'None at all. The courses are written in plain English for people who have never opened a life insurance policy or talked to an estate attorney. If you can read this page, you can learn everything inside.',
+              },
+              {
+                q: 'Is this financial or legal advice?',
+                a: 'LegacyShield is a financial education platform — not a law firm or a financial advisory. We teach you how these systems work so you can make informed decisions and ask better questions when you do work with professionals. Legacy Builder members get access to licensed attorney Q&A sessions.',
+              },
+              {
+                q: 'What happens after the $1 first month?',
+                a: 'After your first month, you are billed at your plan rate ($39/month for Community, $99/month for Legacy Builder). You can cancel at any time before renewal with no penalty. There are no contracts and no hidden fees.',
+              },
+              {
+                q: 'Can I cancel anytime?',
+                a: 'Yes. Cancel from your account dashboard at any time. If you cancel before your next billing date, you keep access through the end of your current period and will not be charged again.',
+              },
+              {
+                q: 'Is my payment information secure?',
+                a: 'All payments are processed through Stripe — the same payment processor used by Amazon, Shopify, and thousands of major companies. LegacyShield never stores your card details.',
+              },
+            ].map((item, i) => (
+              <details key={i} className="group bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                <summary className="flex items-center justify-between px-7 py-5 cursor-pointer list-none">
+                  <span className="font-semibold text-[#0a1628] text-base pr-4">{item.q}</span>
+                  <span className="text-[#d4a017] font-bold text-xl flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="px-7 pb-5">
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                </div>
+              </details>
             ))}
           </div>
         </div>
@@ -329,21 +426,25 @@ export default function Home() {
       {/* Join CTA */}
       <section id="join" className="py-20 px-6 bg-white">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">Start Protecting Your Family Today</h2>
-          <p className="text-gray-600 text-lg mb-10">
-            Join the LegacyShield community — DC families learning, growing, and protecting each other.
+          <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+            Limited Time Offer
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">Your First Month Is $1.</h2>
+          <p className="text-gray-600 text-lg mb-3">
+            Full access. No commitment. Cancel before your second month and you won&apos;t be charged again.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 px-5 py-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:border-[#d4a017] focus:ring-1 focus:ring-[#d4a017]"
-            />
-            <button type="submit" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-sm px-7 py-3 rounded-full transition-colors whitespace-nowrap">
-              Join Waitlist
-            </button>
-          </form>
-          <p className="text-gray-400 text-sm">Early access opens soon. Join the waitlist — no commitment.</p>
+          <p className="text-gray-500 text-base mb-10">
+            Join the families in the DC metro area already protecting what they&apos;ve built.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <a href="/signup?plan=community" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-base px-10 py-4 rounded-full transition-colors">
+              Start for $1 — Community Plan
+            </a>
+            <a href="/signup?plan=legacy_builder" className="border-2 border-[#0a1628] hover:bg-[#0a1628] hover:text-white text-[#0a1628] font-bold text-base px-10 py-4 rounded-full transition-colors">
+              Start for $1 — Legacy Builder
+            </a>
+          </div>
+          <p className="text-gray-400 text-sm">Secure checkout via Stripe &middot; Cancel anytime &middot; No contracts</p>
         </div>
       </section>
 
