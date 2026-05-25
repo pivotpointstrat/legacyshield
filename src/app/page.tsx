@@ -14,6 +14,7 @@ export default function Home() {
             <a href="#features" className="text-gray-300 hover:text-white text-sm transition-colors">What You Get</a>
             <a href="#pricing" className="text-gray-300 hover:text-white text-sm transition-colors">Pricing</a>
             <a href="#faq" className="text-gray-300 hover:text-white text-sm transition-colors">FAQ</a>
+            <a href="/login" className="text-gray-300 hover:text-white text-sm font-medium transition-colors border border-white/20 hover:border-white/50 px-4 py-2 rounded-full">Sign In</a>
             <a href="/signup" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-semibold text-sm px-5 py-2 rounded-full transition-colors">Join Now</a>
           </div>
         </div>
