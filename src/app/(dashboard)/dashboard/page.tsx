@@ -73,6 +73,30 @@ export default function DashboardPage() {
         <p className="text-gray-500">Your family&apos;s financial future starts here. Keep building.</p>
       </div>
 
+      {/* Welcome Video Greeting */}
+      <div className="bg-[#0a1628] rounded-2xl overflow-hidden mb-8 border border-white/10">
+        <div className="flex flex-col md:flex-row items-center gap-6 p-6">
+          <div className="flex-shrink-0 w-full md:w-64">
+            <video
+              controls
+              preload="metadata"
+              className="w-full rounded-xl shadow-lg"
+            >
+              <source src="/darcia-intro.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div className="text-white">
+            <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-widest">
+              Welcome Message
+            </div>
+            <h3 className="text-xl font-bold mb-2">A message from Darcia Sterling</h3>
+            <p className="text-white/60 text-sm leading-relaxed">
+              Chief of Staff to Anthony Washington. Watch this quick welcome to get oriented and know exactly how LegacyShield Pro will protect your family&apos;s future.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Active subscription banner */}
       {isActive && (
         <div className="bg-green-50 border border-green-200 rounded-2xl px-6 py-4 mb-8 flex items-center gap-3">

@@ -84,6 +84,13 @@ export async function sendWelcomeEmail({
       <p style="margin:0;font-size:18px;font-weight:700;color:#0a1628">${planLabel} &mdash; ${planPrice}</p>
     </div>
 
+    <div style="background:#0a1628;border-radius:12px;padding:20px;margin:0 0 28px;text-align:center">
+      <p style="margin:0 0 8px;font-size:12px;font-weight:700;color:#d4a017;text-transform:uppercase;letter-spacing:0.05em">&#127916; Welcome Video</p>
+      <p style="color:#ffffff;font-size:15px;font-weight:600;margin:0 0 4px">A personal welcome from Darcia Sterling</p>
+      <p style="color:#9ca3af;font-size:13px;margin:0 0 16px">Chief of Staff &mdash; watch this first to get oriented</p>
+      <a href="${SITE}/dashboard" style="display:inline-block;background:#d4a017;color:#0a1628;font-weight:700;font-size:14px;padding:10px 24px;border-radius:8px;text-decoration:none">&#9654; Watch Welcome Video</a>
+    </div>
+
     <p style="color:#374151;font-size:15px;margin:0 0 8px"><strong>Here&apos;s what&apos;s waiting for you:</strong></p>
     <ul style="color:#6b7280;font-size:14px;padding-left:20px;margin:0 0 28px">
       <li style="margin-bottom:6px">&#128218; Life Insurance 101 &mdash; start here first</li>
