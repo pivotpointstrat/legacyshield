@@ -28,6 +28,8 @@ export async function POST(req: NextRequest) {
       password: hashedPassword,
       plan: 'community',
       subscriptionStatus: 'inactive',
+      // Start lead nurture sequence immediately on signup
+      leadNurtureStartedAt: new Date(),
     });
 
     return NextResponse.json({ message: 'Account created successfully' }, { status: 201 });

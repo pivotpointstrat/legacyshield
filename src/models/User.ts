@@ -8,6 +8,13 @@ export interface IUser extends Document {
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
   subscriptionStatus: 'active' | 'inactive' | 'trialing' | 'canceled';
+  // Email sequence tracking
+  onboardingStartedAt?: Date;      // Set when subscription activates
+  leadNurtureStartedAt?: Date;     // Set when account is created (community plan)
+  canceledAt?: Date;               // Set when subscription is canceled
+  reengagementStartedAt?: Date;    // Set when canceledAt is recorded
+  emailSequenceLog: string[];      // e.g. ['onboarding_1', 'nurture_2', 'reengagement_1']
+  workshopNotifiedAt?: Date;       // Last workshop promo sent
   createdAt: Date;
   updatedAt: Date;
 }
@@ -25,6 +32,13 @@ const UserSchema = new Schema<IUser>(
       enum: ['active', 'inactive', 'trialing', 'canceled'],
       default: 'inactive',
     },
+    // Email sequence tracking
+    onboardingStartedAt: { type: Date },
+    leadNurtureStartedAt: { type: Date },
+    canceledAt: { type: Date },
+    reengagementStartedAt: { type: Date },
+    emailSequenceLog: { type: [String], default: [] },
+    workshopNotifiedAt: { type: Date },
   },
   { timestamps: true }
 );

@@ -23,10 +23,13 @@ export async function POST(req: NextRequest) {
 
   try {
     switch (event.type) {
+
+      // ── Subscription activated ─────────────────────────────────────────────
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session;
         const { userId, plan } = session.metadata ?? {};
         if (userId) {
+          const now = new Date();
           const user = await User.findByIdAndUpdate(
             userId,
             {
@@ -34,11 +37,15 @@ export async function POST(req: NextRequest) {
               plan: plan || 'community',
               stripeCustomerId: session.customer as string,
               stripeSubscriptionId: session.subscription as string,
+              // Start onboarding sequence; clear any re-engagement sequence
+              onboardingStartedAt: now,
+              $unset: { reengagementStartedAt: '' },
             },
             { new: true }
           );
           console.log(`[webhook] Activated subscription for user ${userId}`);
-          // Send welcome email
+
+          // Day 0: Send welcome email immediately
           if (user?.email) {
             await sendWelcomeEmail({
               name: user.name,
@@ -50,16 +57,25 @@ export async function POST(req: NextRequest) {
         break;
       }
 
+      // ── Subscription canceled ──────────────────────────────────────────────
       case 'customer.subscription.deleted': {
         const sub = event.data.object as Stripe.Subscription;
+        const now = new Date();
         await User.findOneAndUpdate(
           { stripeSubscriptionId: sub.id },
-          { subscriptionStatus: 'canceled' }
+          {
+            subscriptionStatus: 'canceled',
+            canceledAt: now,
+            // Start re-engagement sequence
+            reengagementStartedAt: now,
+            $unset: { onboardingStartedAt: '' },
+          }
         );
         console.log(`[webhook] Canceled subscription ${sub.id}`);
         break;
       }
 
+      // ── Payment failed ─────────────────────────────────────────────────────
       case 'invoice.payment_failed': {
         const invoice = event.data.object as Stripe.Invoice;
         const customerId = invoice.customer as string;
@@ -69,7 +85,6 @@ export async function POST(req: NextRequest) {
           { new: true }
         );
         console.log(`[webhook] Payment failed for customer ${customerId}`);
-        // Send payment failed email
         if (user?.email) {
           await sendPaymentFailedEmail({
             name: user.name,
@@ -79,17 +94,23 @@ export async function POST(req: NextRequest) {
         break;
       }
 
+      // ── Payment succeeded (renewal) ────────────────────────────────────────
       case 'invoice.payment_succeeded': {
         const invoice = event.data.object as Stripe.Invoice;
         const customerId = invoice.customer as string;
         await User.findOneAndUpdate(
           { stripeCustomerId: customerId },
-          { subscriptionStatus: 'active' }
+          {
+            subscriptionStatus: 'active',
+            // Clear re-engagement if they paid again
+            $unset: { reengagementStartedAt: '' },
+          }
         );
         console.log(`[webhook] Renewal succeeded for customer ${customerId}`);
         break;
       }
 
+      // ── Plan upgraded/downgraded ───────────────────────────────────────────
       case 'customer.subscription.updated': {
         const sub = event.data.object as Stripe.Subscription;
         const unitAmount = sub.items.data[0]?.price.unit_amount;
