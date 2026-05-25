@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
+import { trackCheckoutStarted } from '@/lib/analytics';
 
 export default function SubscribePage() {
   const { data: session } = useSession();
@@ -11,6 +12,8 @@ export default function SubscribePage() {
   const handleCheckout = async (plan: 'community' | 'legacy_builder') => {
     setError('');
     setLoading(plan);
+    // Track checkout initiation
+    trackCheckoutStarted(plan, plan === 'legacy_builder' ? 1 : 1);
     try {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',

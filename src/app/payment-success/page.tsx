@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Suspense } from 'react';
+import { trackSubscriptionActivated } from '@/lib/analytics';
 
 function PaymentSuccessContent() {
-  const { update } = useSession();
+  const { update, data: session } = useSession();
   const searchParams = useSearchParams();
   const router = useRouter();
   const sessionId = searchParams.get('session_id');
@@ -32,16 +33,21 @@ function PaymentSuccessContent() {
         if (!res.ok) {
           const data = await res.json();
           console.error('[payment-success] activate failed:', data.error);
-          // Still try to proceed — webhook may have already activated
+          // Still proceed — webhook may have already activated
         }
 
-        // Step 2: Force NextAuth session refresh to pick up new subscriptionStatus
+        // Step 2: Force NextAuth session refresh
         setMessage('Setting up your dashboard...');
         await update();
 
-        // Step 3: Small delay to ensure session propagates, then redirect
+        // Step 3: Fire GA4 purchase event
+        const plan = (session?.user as { plan?: string })?.plan ?? 'community';
+        const value = plan === 'legacy_builder' ? 1 : 1; // $1 first month
+        trackSubscriptionActivated(plan, value);
+
+        // Step 4: Redirect to dashboard
         setStatus('done');
-        setMessage('Welcome to §§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME)! Redirecting to your dashboard...');
+        setMessage('Welcome to LegacyShield! Redirecting to your dashboard...');
 
         setTimeout(() => {
           router.replace('/dashboard');
@@ -49,7 +55,6 @@ function PaymentSuccessContent() {
 
       } catch (err) {
         console.error('[payment-success] error:', err);
-        // Even on error, try to go to dashboard — webhook may have activated
         setStatus('done');
         router.replace('/dashboard');
       }
@@ -77,7 +82,7 @@ function PaymentSuccessContent() {
           <div className="w-8 h-8 bg-[#d4a017] rounded-full flex items-center justify-center flex-shrink-0">
             <span className="text-[#0a1628] font-bold text-sm">L</span>
           </div>
-          <span className="text-white font-bold text-lg">§§secret(MONGODB+SRV://MINT72SEYLA:ANDBUX9HKQRO5K90@LEGACYSHIELD.MHL1TQV.MONGODB.NET/?APPNAME) Pro</span>
+          <span className="text-white font-bold text-lg">LegacyShield Pro</span>
         </div>
 
         <h1 className="text-2xl font-bold text-white mb-3">
