@@ -133,6 +133,7 @@ function SignupForm() {
             value={form.name}
             onChange={e => setForm({ ...form, name: e.target.value })}
             required
+            autoComplete="off"
             className="w-full bg-[#0a1628] border border-[#1a3a5c] text-white px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#d4a017] focus:ring-1 focus:ring-[#d4a017]"
             placeholder="Enter Your Full Name"
           />
@@ -146,6 +147,7 @@ function SignupForm() {
             value={form.email}
             onChange={e => setForm({ ...form, email: e.target.value })}
             required
+            autoComplete="off"
             className="w-full bg-[#0a1628] border border-[#1a3a5c] text-white px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#d4a017] focus:ring-1 focus:ring-[#d4a017]"
             placeholder="you@example.com"
           />
@@ -161,6 +163,7 @@ function SignupForm() {
               onChange={e => setForm({ ...form, password: e.target.value })}
               required
               minLength={6}
+              autoComplete="new-password"
               className="w-full bg-[#0a1628] border border-[#1a3a5c] text-white px-4 py-3 pr-11 rounded-xl text-sm focus:outline-none focus:border-[#d4a017] focus:ring-1 focus:ring-[#d4a017]"
               placeholder="Minimum 6 characters"
             />
@@ -185,6 +188,7 @@ function SignupForm() {
               onChange={e => setForm({ ...form, confirmPassword: e.target.value })}
               required
               minLength={6}
+              autoComplete="new-password"
               className={`w-full bg-[#0a1628] border text-white px-4 py-3 pr-11 rounded-xl text-sm focus:outline-none focus:ring-1 transition-colors ${
                 form.confirmPassword && form.password !== form.confirmPassword
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
