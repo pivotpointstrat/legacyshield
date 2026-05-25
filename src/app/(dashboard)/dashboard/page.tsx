@@ -1,20 +1,69 @@
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 
 const courses = [
-  { id: 1, title: 'Life Insurance 101', icon: '🛡️', lessons: 6, completed: 0, description: 'Learn what you need, what to avoid, and how to stop overpaying.' },
-  { id: 2, title: 'Estate Planning Basics', icon: '📋', lessons: 5, completed: 0, description: 'Wills, trusts, beneficiaries — explained simply.' },
-  { id: 3, title: 'Generational Wealth Playbook', icon: '💰', lessons: 7, completed: 0, description: 'Real strategies for DC working families.' },
-  { id: 4, title: 'Protecting Your Family', icon: '🏠', lessons: 4, completed: 0, description: 'Power of attorney, guardianship, and family protection planning.' },
+  {
+    courseId: 'life-insurance-101',
+    title: 'Life Insurance 101',
+    icon: '🛡️',
+    lessons: 6,
+    description: 'Learn what you need, what to avoid, and how to stop overpaying.',
+    href: '/dashboard/courses/life-insurance-101',
+  },
+  {
+    courseId: 'estate-planning-basics',
+    title: 'Estate Planning Basics',
+    icon: '📋',
+    lessons: 5,
+    description: 'Wills, trusts, beneficiaries — explained simply.',
+    href: '/dashboard/courses/estate-planning-basics',
+  },
+  {
+    courseId: 'generational-wealth-playbook',
+    title: 'Generational Wealth Playbook',
+    icon: '💰',
+    lessons: 7,
+    description: 'Real strategies for DC working families.',
+    href: '/dashboard/courses/generational-wealth-playbook',
+  },
+  {
+    courseId: null,
+    title: 'Protecting Your Family',
+    icon: '🏠',
+    lessons: 4,
+    description: 'Power of attorney, guardianship, and family protection planning.',
+    href: '/dashboard/courses',
+  },
 ];
 
-export default async function DashboardPage() {
-  const session = await getServerSession(authOptions);
+interface CompletedLesson {
+  courseId: string;
+  lessonId: number;
+}
+
+export default function DashboardPage() {
+  const { data: session } = useSession();
+  const [completedLessons, setCompletedLessons] = useState<CompletedLesson[]>([]);
+
   const firstName = session?.user?.name?.split(' ')[0] ?? 'Member';
   const subscriptionStatus = (session?.user as any)?.subscriptionStatus;
   const plan = (session?.user as any)?.plan;
   const isActive = subscriptionStatus === 'active';
+
+  useEffect(() => {
+    fetch('/api/progress')
+      .then((r) => r.json())
+      .then((data) => setCompletedLessons(data.completedLessons ?? []))
+      .catch(() => {});
+  }, []);
+
+  const getCompleted = (courseId: string) =>
+    completedLessons.filter((l) => l.courseId === courseId).length;
+
+  const totalCompleted = completedLessons.length;
 
   return (
     <div>
@@ -39,7 +88,7 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
         {[
           { label: 'Courses Available', value: '6', icon: '📚' },
-          { label: 'Lessons Completed', value: '0', icon: '✅' },
+          { label: 'Lessons Completed', value: String(totalCompleted), icon: '✅' },
           { label: 'Next Workshop', value: 'Jun 7', icon: '🤝' },
           { label: 'Your Plan', value: isActive ? (plan === 'legacy_builder' ? 'Legacy Builder' : 'Community') : 'Free', icon: '🌟' },
         ].map((stat, i) => (
@@ -71,27 +120,43 @@ export default async function DashboardPage() {
           <Link href="/dashboard/courses" className="text-[#d4a017] hover:text-[#b8860b] text-sm font-medium">View all →</Link>
         </div>
         <div className="grid md:grid-cols-2 gap-5">
-          {courses.map(course => (
-            <Link key={course.id} href="/dashboard/courses"
-              className="bg-white rounded-2xl border border-gray-100 p-6 hover:border-[#d4a017]/30 hover:shadow-md transition-all group">
-              <div className="flex items-start gap-4">
-                <div className="text-3xl">{course.icon}</div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-[#0a1628] mb-1 group-hover:text-[#d4a017] transition-colors">{course.title}</h3>
-                  <p className="text-gray-500 text-sm mb-4">{course.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-400">{course.lessons} lessons</span>
-                    <div className="flex items-center gap-2">
-                      <div className="h-1.5 w-24 bg-gray-100 rounded-full">
-                        <div className="h-1.5 bg-[#d4a017] rounded-full" style={{ width: `${(course.completed / course.lessons) * 100}%` }} />
+          {courses.map((course, idx) => {
+            const completed = course.courseId ? getCompleted(course.courseId) : 0;
+            const isCourseDone = course.courseId !== null && completed === course.lessons;
+            const pct = Math.round((completed / course.lessons) * 100);
+
+            return (
+              <Link key={idx} href={course.href}
+                className={`bg-white rounded-2xl border p-6 hover:shadow-md transition-all group ${
+                  isCourseDone ? 'border-green-200' : completed > 0 ? 'border-[#d4a017]/30' : 'border-gray-100 hover:border-[#d4a017]/30'
+                }`}>
+                <div className="flex items-start gap-4">
+                  <div className="text-3xl">{course.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-bold text-[#0a1628] group-hover:text-[#d4a017] transition-colors">{course.title}</h3>
+                      {isCourseDone && <span className="text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">✅ Done</span>}
+                    </div>
+                    <p className="text-gray-500 text-sm mb-4">{course.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400">{course.lessons} lessons</span>
+                      <div className="flex items-center gap-2">
+                        <div className="h-1.5 w-24 bg-gray-100 rounded-full overflow-hidden">
+                          <div
+                            className={`h-1.5 rounded-full transition-all duration-500 ${
+                              isCourseDone ? 'bg-green-500' : 'bg-[#d4a017]'
+                            }`}
+                            style={{ width: `${pct}%` }}
+                          />
+                        </div>
+                        <span className="text-xs text-gray-400">{completed}/{course.lessons}</span>
                       </div>
-                      <span className="text-xs text-gray-400">{course.completed}/{course.lessons}</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
