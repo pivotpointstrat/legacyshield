@@ -15,6 +15,8 @@ export interface IUser extends Document {
   reengagementStartedAt?: Date;    // Set when canceledAt is recorded
   emailSequenceLog: string[];      // e.g. ['onboarding_1', 'nurture_2', 'reengagement_1']
   workshopNotifiedAt?: Date;       // Last workshop promo sent
+  // Course completion tracking
+  completedLessons: { courseId: string; lessonId: number; completedAt: Date }[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -39,6 +41,15 @@ const UserSchema = new Schema<IUser>(
     reengagementStartedAt: { type: Date },
     emailSequenceLog: { type: [String], default: [] },
     workshopNotifiedAt: { type: Date },
+    // Course completion tracking
+    completedLessons: {
+      type: [{
+        courseId: { type: String, required: true },
+        lessonId: { type: Number, required: true },
+        completedAt: { type: Date, default: Date.now },
+      }],
+      default: [],
+    },
   },
   { timestamps: true }
 );
