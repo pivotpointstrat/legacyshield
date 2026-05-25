@@ -4,6 +4,10 @@ import FacebookPostLog from '@/models/FacebookPost';
 import { publishFacebookPost } from '@/lib/facebook';
 import { JUNE_2026_POSTS } from '@/data/facebook-posts';
 
+export const dynamic = 'force-dynamic';
+
+
+
 // POST /api/facebook-scheduler
 // Called daily by Railway cron at 7:00 AM ET (11:00 UTC)
 // Authorization: Bearer <SCHEDULER_SECRET>

@@ -3,6 +3,10 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { stripe } from '@/lib/stripe';
 
+export const dynamic = 'force-dynamic';
+
+
+
 const PLANS = {
   community: {
     name: 'LegacyShield Community',

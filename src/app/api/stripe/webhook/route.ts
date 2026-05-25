@@ -5,6 +5,10 @@ import User from '@/models/User';
 import Stripe from 'stripe';
 import { sendWelcomeEmail, sendPaymentFailedEmail } from '@/lib/email';
 
+export const dynamic = 'force-dynamic';
+
+
+
 export async function POST(req: NextRequest) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature')!;

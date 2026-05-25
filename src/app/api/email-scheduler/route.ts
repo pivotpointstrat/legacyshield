@@ -15,6 +15,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 import {
+
   sendOnboardingDay1Email,
   sendOnboardingDay3Email,
   sendOnboardingDay7Email,
@@ -25,6 +26,9 @@ import {
   sendReengagementDay14Email,
   sendReengagementDay30Email,
 } from '@/lib/email';
+
+export const dynamic = 'force-dynamic';
+
 
 // ─── Auth guard ──────────────────────────────────────────────────────────────
 function isAuthorized(req: NextRequest): boolean {

@@ -4,6 +4,10 @@ import { authOptions } from '@/lib/auth';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 
+export const dynamic = 'force-dynamic';
+
+
+
 // GET /api/progress?courseId=life-insurance-101
 // Returns completed lesson IDs for the current user (optionally filtered by course)
 export async function GET(req: NextRequest) {
