@@ -399,7 +399,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Simple, Honest Pricing</h2>
-            <p className="text-gray-300 text-lg">No commissions. No hidden upsells. Just education that pays for itself.</p>
+            <p className="text-gray-300 text-lg">No hidden upsells. Just education that pays for itself.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#0f2040] border border-[#1a3a5c] rounded-2xl p-8">
