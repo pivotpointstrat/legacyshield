@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  other: {
+    'impact-site-verification': 'f71c8c44-9cd2-4737-8644-592d0745fb4c',
+  },
 };
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
