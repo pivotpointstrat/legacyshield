@@ -39,7 +39,7 @@ What questions do you have about life insurance? Drop them below 👇`,
     type: 'personal',
     topic: 'Why Anthony Built LegacyShield',
     published: false,
-    message: `25 years on the job in DC. I've responded to more calls than I can count.
+    message: `30 years on the job in DC. I've responded to more calls than I can count.
 
 But the ones that stayed with me weren't always the dangerous ones. It was the families I met after. Good people. Hard workers. Who had nothing in place when something happened.
 
@@ -167,7 +167,7 @@ Protecting what they built IS part of the legacy.`,
     published: false,
     message: `My morning: up before 5. Workout done before most people's alarms go off. Then I get to work.
 
-People ask me where I get the discipline. Honest answer? 25 years in law enforcement will wire you that way.
+People ask me where I get the discipline. Honest answer? 30 years in law enforcement will wire you that way.
 
 But I've also seen what happens when people aren't disciplined about protecting their families financially.
 
@@ -305,7 +305,7 @@ Happy Juneteenth. Build something that lasts. 🖤❤️💚`,
     type: 'personal',
     topic: 'Lessons from the Badge',
     published: false,
-    message: `Something 25 years in law enforcement taught me: the worst time to make a plan is during a crisis.
+    message: `Something 30 years in law enforcement taught me: the worst time to make a plan is during a crisis.
 
 People who had plans — wills, insurance, savings — always came out the other side in a better place. Not because the tragedy was smaller. But because they weren't also fighting logistical chaos at the worst moment of their lives.
 

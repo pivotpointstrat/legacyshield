@@ -140,7 +140,7 @@ export default function Home() {
               {/* Credential badges */}
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start max-w-xs">
                 {[
-                  { icon: '⭐', label: '25-Year Law Enforcement Veteran' },
+                  { icon: '⭐', label: '30-Year Law Enforcement Veteran' },
                   { icon: '🤝', label: 'Mason & Community Leader' },
                   { icon: '🏠', label: 'DMV Native' },
                   { icon: '👨‍👩‍👧‍👦', label: 'Family Man & Father' },
@@ -163,7 +163,7 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-gray-600 text-base leading-relaxed">
                 <p>
-                  I spent 25 years serving the DC metro area in law enforcement. During that time, I sat across from families in their most vulnerable moments and saw firsthand how financial unpreparedness turns hardship into crisis. Whether it is a family home lost to unpaid property taxes or inheritance stalled in probate court, I have seen how quickly a lack of planning can impact a family’s future. It is a common misconception in our communities that a power of attorney alone is enough to protect your assets.
+                  I spent 30 years serving the DC metro area in law enforcement. During that time, I sat across from families in their most vulnerable moments and saw firsthand how financial unpreparedness turns hardship into crisis. Whether it is a family home lost to unpaid property taxes or inheritance stalled in probate court, I have seen how quickly a lack of planning can impact a family’s future. It is a common misconception in our communities that a power of attorney alone is enough to protect your assets.
                 </p>
                 <p>
                   When I retired in 2020, I realized there were few resources available to provide working families in the DMV with plain, trustworthy guidance on these issues. I created LegacyShield Pro to fill that gap.
@@ -357,7 +357,7 @@ export default function Home() {
             {[
               {
                 q: 'Is LegacyShield a real course or just generic content?',
-                a: 'Everything inside LegacyShield was built specifically for DC metro area families — the stats, the resources, the legal references. It is not recycled content from a national template. Anthony Washington built it from 25 years of lived experience in this community.',
+                a: 'Everything inside LegacyShield was built specifically for DC metro area families — the stats, the resources, the legal references. It is not recycled content from a national template. Anthony Washington built it from 30 years of lived experience in this community.',
               },
               {
                 q: 'Do I need any financial background to use LegacyShield?',

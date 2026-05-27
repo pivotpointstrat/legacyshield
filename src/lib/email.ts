@@ -162,7 +162,7 @@ export async function sendOnboardingDay3Email({
 }) {
   const body = `
     <h1 style="color:#0a1628;font-size:22px;margin:0 0 8px">A story I need to tell you, ${name}</h1>
-    <p style="color:#6b7280;font-size:15px;margin:0 0 20px">25 years in DC law enforcement taught me a lot of things. But nothing hit harder than what I saw happen to families after a tragedy.</p>
+    <p style="color:#6b7280;font-size:15px;margin:0 0 20px">30 years in DC law enforcement taught me a lot of things. But nothing hit harder than what I saw happen to families after a tragedy.</p>
 
     <p style="color:#374151;font-size:15px;margin:0 0 16px">I&apos;ve responded to calls where a husband was gone &mdash; good man, worked every day &mdash; and his family had nothing. No will. No life insurance. No plan. The wife had 60 days before the mortgage came due and no idea where to start.</p>
     <p style="color:#374151;font-size:15px;margin:0 0 16px">I&apos;ve seen it happen in the best neighborhoods and the roughest ones. It doesn&apos;t discriminate. But I&apos;ve also seen the difference when a family <em>was</em> prepared. Same tragedy &mdash; completely different outcome.</p>
@@ -183,7 +183,7 @@ export async function sendOnboardingDay3Email({
   return getResend().emails.send({
     from: FROM,
     to: email,
-    subject: 'Why I built this (a story from 25 years on the job)',
+    subject: 'Why I built this (a story from 30 years on the job)',
     html: emailWrapper(body),
   });
 }
@@ -474,7 +474,7 @@ export async function sendReengagementDay14Email({
 }) {
   const body = `
     <h1 style="color:#0a1628;font-size:22px;margin:0 0 8px">Quick question, ${name}</h1>
-    <p style="color:#6b7280;font-size:15px;margin:0 0 20px">I keep things direct &mdash; 25 years in law enforcement will do that to you.</p>
+    <p style="color:#6b7280;font-size:15px;margin:0 0 20px">I keep things direct &mdash; 30 years in law enforcement will do that to you.</p>
 
     <p style="color:#374151;font-size:15px;margin:0 0 16px">What made you cancel? I ask because every piece of feedback helps me build something better for the DC families who come after you.</p>
 
