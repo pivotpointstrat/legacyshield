@@ -18,6 +18,20 @@ export const metadata: Metadata = {
     siteName: 'LegacyShield Pro',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://legacyshieldpro.com/images/hero.jpg',
+        width: 1260,
+        height: 840,
+        alt: 'LegacyShield Pro — Protect Your Family. Build Your Legacy.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LegacyShield Pro — Protect Your Family. Build Your Legacy.',
+    description: 'Financial literacy and estate education for DC working families.',
+    images: ['https://legacyshieldpro.com/images/hero.jpg'],
   },
   other: {
     'impact-site-verification': 'f71c8c44-9cd2-4737-8644-592d0745fb4c',
