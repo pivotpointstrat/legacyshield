@@ -32,7 +32,7 @@ const courses = [
     id: 'generational-wealth-playbook',
     icon: '💰',
     title: 'Generational Wealth Playbook',
-    totalLessons: 7,
+    totalLessons: 8,
     description: 'Real strategies for DC working families to start building wealth that outlasts them. Not Wall Street theory — practical steps you can take this week.',
     topics: ['The wealth gap explained', 'Starting with $0', 'Index funds & retirement accounts', 'Real estate 101', 'Teaching your kids about money', 'Credit and debt strategy', 'Building a family wealth plan'],
     duration: '60 min',
