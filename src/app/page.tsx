@@ -82,22 +82,21 @@ export default function Home() {
       <section className="py-16 px-6 bg-[#0a1628] border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
-            Meet Your Chief of Staff
+            From the Founder
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-            A Personal Welcome from <span className="text-[#d4a017]">Darcia Sterling</span>
+            A Personal Welcome from <span className="text-[#d4a017]">Anthony Washington</span>
           </h2>
           <p className="text-white/60 mb-8 text-base max-w-xl mx-auto">
-            Chief of Staff to Anthony Washington &mdash; here to guide your family&apos;s journey to financial protection and generational wealth.
+            Retired DC law enforcement. 30 years of service. Now on a mission to protect every family&apos;s legacy &mdash; starting with yours.
           </p>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 max-w-2xl mx-auto">
             <video
               controls
               preload="metadata"
               className="w-full rounded-2xl"
-              poster="/darcia-sterling-avatar-thumb.jpg"
             >
-              <source src="/darcia-intro.mp4" type="video/mp4" />
+              <source src="/legacyshield-welcome.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
