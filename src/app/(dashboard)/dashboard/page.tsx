@@ -79,7 +79,8 @@ export default function DashboardPage() {
           <div className="flex-shrink-0 w-full md:w-64">
             <video
               controls
-              preload="metadata"
+              preload="auto"
+              poster="/darcia-sterling-avatar-thumb.jpg"
               className="w-full rounded-xl shadow-lg"
             >
               <source src="/darcia-intro.mp4" type="video/mp4" />
