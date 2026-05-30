@@ -34,7 +34,7 @@ export const course: Course = {
       slug: 'what-is-life-insurance',
       title: 'What Is Life Insurance?',
       duration: '7 min',
-      videoId: null,
+      videoId: 'local:life-insurance-101--what-you-need-to-know',
       content: [
         'Life insurance is a contract between you and an insurance company. You pay a monthly or annual premium, and in exchange, the company agrees to pay a lump sum — called a death benefit — to your chosen beneficiaries when you die. That money can cover funeral costs, replace your income, pay off your mortgage, fund your children\'s education, or simply give your family time to grieve without financial panic.',
         'Here\'s the reality in the DC metro area: the average household carries significant debt — mortgages, car payments, student loans — and most families are living paycheck to paycheck. If you died tomorrow, how long could your family survive on savings alone? For most people, the honest answer is: not long. Life insurance changes that math.',

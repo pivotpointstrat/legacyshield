@@ -34,7 +34,7 @@ export const course: Course = {
       slug: 'understanding-your-financial-reality',
       title: 'Understanding Your Financial Reality',
       duration: '10 min',
-      videoId: null,
+      videoId: 'local:how-to-talk-to-your-family-about-money-and-legacy',
       content: [
         '"In law enforcement, before we responded to any situation, we gathered intelligence first. You never walk into a scene blind. Building wealth works the same way. Before you can build anything, you have to know exactly what you are working with. Most families skip this step — and that is why they stay stuck." — Anthony Washington',
         '**Net worth is the foundation of everything.** Net worth is simple: it is what you own minus what you owe. Net Worth = Total Assets − Total Liabilities. Many families in our community have been taught to think about their paycheck — how much comes in, how much goes out. But paycheck-to-paycheck thinking keeps you in a cycle. Wealth thinking is different. Wealth is what remains when the paycheck stops.',

@@ -34,7 +34,7 @@ export const course: Course = {
       slug: 'why-you-need-a-will',
       title: 'Why You Need a Will — And What Happens Without One',
       duration: '8 min',
-      videoId: null,
+      videoId: 'local:why-your-family-needs-a-plan--right-now',
       content: [
         '"I have sat with families in their most vulnerable moments and watched financial unpreparedness turn hardship into crisis. A home lost to probate. Savings frozen for years. Children placed with relatives no one would have chosen. All of it preventable with one document that most people never get around to writing." — Anthony Washington',
         '**What is a Last Will and Testament?** A will is a legal document that expresses your wishes about how your property and assets should be distributed after you die. It names who receives what, who cares for your minor children, and who is responsible for carrying out your instructions (your executor). Without one, the state makes all of those decisions for you.',
@@ -57,7 +57,7 @@ export const course: Course = {
       slug: 'trusts-explained-simply',
       title: 'Trusts Explained Simply — What They Are and When You Need One',
       duration: '9 min',
-      videoId: null,
+      videoId: 'local:wills-vs-trusts--whats-the-difference',
       content: [
         '"The difference between a will and a trust is the difference between a letter and a locked safe. A will says what you want. A trust makes it happen — privately, immediately, and without the courts." — Anthony Washington',
         '**What is a trust?** A trust is a legal arrangement where you (the grantor) place your assets into a structure managed by a trustee — which can be you while you are living — for the benefit of your beneficiaries. The trust holds the assets during your lifetime and transfers them directly to your beneficiaries when you pass, bypassing the probate process entirely.',

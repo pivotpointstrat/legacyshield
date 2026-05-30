@@ -140,13 +140,23 @@ export default function LessonPageClient({
       <div className="mb-10">
         {lesson.videoId ? (
           <div className="aspect-video rounded-2xl overflow-hidden bg-black">
-            <iframe
-              src={`https://www.youtube.com/embed/${lesson.videoId}`}
-              title={lesson.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
+            {lesson.videoId.startsWith('local:') ? (
+              <video
+                controls
+                preload="auto"
+                className="w-full h-full"
+              >
+                <source src={`/api/video/${lesson.videoId.replace('local:', '')}`} type="video/mp4" />
+              </video>
+            ) : (
+              <iframe
+                src={`https://www.youtube.com/embed/${lesson.videoId}`}
+                title={lesson.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            )}
           </div>
         ) : (
           <div className="aspect-video rounded-2xl bg-[#0a1628] flex flex-col items-center justify-center text-center p-8">

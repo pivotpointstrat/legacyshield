@@ -32,7 +32,7 @@ export const course: Course = {
       slug: 'healthcare-proxy-medical-decisions',
       title: 'Healthcare Proxy & Medical Decisions',
       duration: '7 min',
-      videoId: null,
+      videoId: 'local:the-hidden-cost-of-dying-without-a-plan',
       content: [
         '"In 30 years of law enforcement, I responded to medical emergencies where families were powerless — not because they did not care, but because they had no legal authority to speak for their loved one. A healthcare proxy is the document that changes that." — Anthony Washington',
         '**What is a Healthcare Proxy?** A healthcare proxy — also called a healthcare power of attorney or medical power of attorney — is a legal document that designates someone you trust to make medical decisions on your behalf if you become unable to make them yourself. This person is called your healthcare agent.',
