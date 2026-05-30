@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const { plan } = await req.json();
+    const { plan, referral } = await req.json();
     const planData = PLANS[plan as keyof typeof PLANS];
 
     if (!planData) {
@@ -78,6 +78,7 @@ export async function POST(req: NextRequest) {
         payment_method_types: ['card'],
         mode: 'payment',
         customer_email: session.user.email!,
+        ...(referral ? { client_reference_id: referral } : {}),
         metadata: {
           userId: (session.user as any).id,
           plan,
@@ -101,6 +102,7 @@ export async function POST(req: NextRequest) {
       payment_method_types: ['card'],
       mode: 'subscription',
       customer_email: session.user.email!,
+      ...(referral ? { client_reference_id: referral } : {}),
       metadata: {
         userId: (session.user as any).id,
         plan,
