@@ -83,7 +83,7 @@ export default function DashboardPage() {
               poster="/darcia-sterling-avatar-thumb.jpg"
               className="w-full rounded-xl shadow-lg"
             >
-              <source src="/darcia-intro.mp4" type="video/mp4" />
+              <source src="/api/video/darcia-intro" type="video/mp4" />
             </video>
           </div>
           <div className="text-white">
