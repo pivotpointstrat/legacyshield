@@ -95,6 +95,7 @@ export default function Home() {
               controls
               preload="metadata"
               className="w-full rounded-2xl"
+              poster="/legacyshield-welcome-thumb.jpg"
             >
               <source src="/legacyshield-welcome.mp4" type="video/mp4" />
               Your browser does not support the video tag.
