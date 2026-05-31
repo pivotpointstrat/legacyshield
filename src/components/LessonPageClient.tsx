@@ -137,8 +137,8 @@ export default function LessonPageClient({
       </div>
 
       {/* Video Player */}
-      <div className="mb-10">
-        {lesson.videoId ? (
+      {lesson.videoId && (
+        <div className="mb-10">
           <div className="aspect-video rounded-2xl overflow-hidden bg-black">
             {lesson.videoId.startsWith('local:') ? (
               <video
@@ -158,14 +158,8 @@ export default function LessonPageClient({
               />
             )}
           </div>
-        ) : (
-          <div className="aspect-video rounded-2xl bg-[#0a1628] flex flex-col items-center justify-center text-center p-8">
-            <div className="text-5xl mb-4">🎥</div>
-            <p className="text-white font-semibold text-lg mb-2">Video Coming Soon</p>
-            <p className="text-gray-400 text-sm max-w-sm">The written lesson below covers everything you need to know. Video lessons are being recorded and will be uploaded shortly.</p>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Lesson Content */}
       <div className="prose prose-lg max-w-none mb-10">
