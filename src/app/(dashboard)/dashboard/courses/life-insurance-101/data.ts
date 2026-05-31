@@ -56,7 +56,7 @@ export const course: Course = {
       slug: 'term-vs-whole-life',
       title: 'Term vs. Whole Life Insurance',
       duration: '8 min',
-      videoId: 'local:term-vs-whole-life',
+      videoId: null,
       content: [
         'This is the question that trips up most families — and it\'s where a lot of insurance agents make their biggest commissions. So let\'s be straight with each other.',
         '**Term life insurance** covers you for a specific period — typically 10, 20, or 30 years. If you die during that term, your beneficiaries receive the full death benefit. If the term expires and you\'re still alive, the coverage ends. That\'s it. No cash value, no investment component — just pure protection at the lowest possible cost. For most working families, this is the right choice.',
