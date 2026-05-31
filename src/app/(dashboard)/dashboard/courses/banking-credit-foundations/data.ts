@@ -4,6 +4,8 @@ export interface Lesson {
   title: string;
   duration: string;
   videoId: string | null;
+  downloadUrl?: string | null;
+  downloadLabel?: string | null;
   content: string[];
   keyTakeaways: string[];
   actionStep: string;
@@ -33,6 +35,9 @@ export const course: Course = {
       title: 'Understanding Your Credit Score',
       duration: '7 min',
       videoId: 'local:your-first-steps-with-legacyshield-pro',
+      downloadUrl: '/LegacyShield_Family_Assessment.pdf',
+      downloadLabel: 'LegacyShield Pro — Family Protection Assessment',
+
       content: [
         '"A credit score is not a measure of your worth as a person. It is a tool — and like any tool, once you understand how it works, you can use it to your advantage." — Anthony Washington',
         '**What is a credit score?** A credit score is a three-digit number between 300 and 850 that represents your creditworthiness — how likely you are to repay borrowed money on time. Lenders, landlords, insurance companies, and even some employers use it to make decisions about you. The most widely used scoring model is the FICO score.',
