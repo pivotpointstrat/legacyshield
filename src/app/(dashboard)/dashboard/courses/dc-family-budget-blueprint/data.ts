@@ -32,7 +32,7 @@ export const course: Course = {
       slug: 'dc-cost-of-living-reality-check',
       title: 'DC Cost of Living: The Reality Check',
       duration: '6 min',
-      videoId: 'local:how-the-legacyshield-pro-membership-works',
+      videoId: null,
       content: [
         '"Generic financial advice tells you to spend no more than 30% of your income on housing. In DC, that advice can feel like a joke. We have to build budgets that work in the real world — this one." — Anthony Washington',
         '**The DC metro area cost of living by the numbers.** Washington DC consistently ranks among the top five most expensive metropolitan areas in the United States. The median monthly rent for a two-bedroom apartment in DC proper is approximately $2,800 to $3,400 as of 2025. In Northern Virginia suburbs like Arlington and Alexandria, comparable housing runs $2,400 to $3,000. In Prince George\'s County and outer Maryland suburbs, you can find $1,600 to $2,200 — still well above the national median.',
